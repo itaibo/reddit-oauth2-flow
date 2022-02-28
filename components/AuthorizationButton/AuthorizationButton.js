@@ -9,7 +9,8 @@ const buttonConfig = {
 
 function buildAuthorizationUrl() {
 	return `https://www.reddit.com/api/v1/authorize?client_id=${buttonConfig.clientId}&response_type=code
-	&redirect_uri=${buttonConfig.redirectUri}&duration=${buttonConfig.tokenDuration}&scope=${buttonConfig.tokenScope}`;
+	&redirect_uri=${buttonConfig.redirectUri}&duration=${buttonConfig.tokenDuration}&scope=${buttonConfig.tokenScope}
+	&state=1`;
 }
 
 export default function AuthorizationButton({ title }) {

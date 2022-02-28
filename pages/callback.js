@@ -54,10 +54,11 @@ export async function getServerSideProps({ query }) {
 	try {
 		request = await axios.post(
 			'https://www.reddit.com/api/v1/access_token',
-			`grant_type=authorization_code&code=${code}&redirect_uri=${config.redirectUri}`,
+			`grant_type=authorization_code&code=${code}&redirect_uri=${Config.redirectUri}`,
 			{
-				headers: {
-					Authorization: Config.clientId + ':' + Config.clientSecret,
+				auth: {
+					username: Config.clientId,
+					password: Config.clientSecret,
 				},
 			},
 		);
