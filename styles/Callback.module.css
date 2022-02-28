@@ -18,3 +18,14 @@
 	border: 1px solid #d3d3d3;
 	padding: 15px;
 }
+
+.error {
+	border: 1px solid #f8f8f8;
+	padding: 20px;
+	border-radius: 4px;
+	font-size: 14px;
+	text-align: center;
+
+	color: #FA624B;
+	text-align: center;
+}
