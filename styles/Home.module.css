@@ -1,0 +1,12 @@
+.information {
+	border: 1px solid #f8f8f8;
+	padding: 20px;
+	background-color: #fafafa;
+	border-radius: 4px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.buttonWrapper {
+	margin-top: 20px;
+}

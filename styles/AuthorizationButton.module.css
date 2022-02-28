@@ -1,0 +1,23 @@
+.buttonLink {
+	text-decoration: none;
+}
+
+.button {
+	background-color: #0079D3;
+	color: #fff;
+	text-align: center;
+	padding: 15px;
+	border-radius: 4px;
+	-webkit-transition: background 0.3s;
+	transition: background 0.3s;
+}
+
+.button:hover {
+	background-color: #0271c7;
+}
+
+.error {
+	color: #FA624B;
+	font-size: 12px;
+	text-align: center;
+}
