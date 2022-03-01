@@ -1,12 +1,8 @@
 import axios from 'axios';
 
-import styles from '../styles/Callback.module.css';
+import Config from '../config';
 
-const Config = {
-	clientId: process.env.NEXT_PUBLIC_REDDIT_CLIENT_ID,
-	clientSecret: process.env.REDDIT_CLIENT_SECRET,
-	redirectUri: process.env.NEXT_PUBLIC_REDIRECT_URI,
-};
+import styles from '../styles/Callback.module.css';
 
 export default function Callback({ error, token }) {
 	if (error) {
@@ -35,6 +31,16 @@ export default function Callback({ error, token }) {
 }
 
 export async function getServerSideProps({ query }) {
+	// Check if everything is configured
+	if (!Config.clientId || !Config.clientSecret || !Config.redirectUri) {
+		return {
+			props: {
+				error: 'Missing environment variables (check NEXT_PUBLIC_REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, and NEXT_PUBLIC_REDIRECT_URI) ',
+			},
+		};
+	}
+
+	// Get variables
 	const code = query.code;
 	const error = query.error;
 

@@ -1,20 +1,15 @@
 import styles from '../../styles/AuthorizationButton.module.css';
 
-const buttonConfig = {
-	clientId: process.env.NEXT_PUBLIC_REDDIT_CLIENT_ID,
-	redirectUri: process.env.NEXT_PUBLIC_REDIRECT_URI,
-	tokenDuration: process.env.NEXT_PUBLIC_TOKEN_DURATION || 'temporary',
-	tokenScope: process.env.NEXT_PUBLIC_TOKEN_SCOPE || 'identity',
-};
+import Config from '../../config';
 
 function buildAuthorizationUrl() {
-	return `https://www.reddit.com/api/v1/authorize?client_id=${buttonConfig.clientId}&response_type=code
-	&redirect_uri=${buttonConfig.redirectUri}&duration=${buttonConfig.tokenDuration}&scope=${buttonConfig.tokenScope}
+	return `https://www.reddit.com/api/v1/authorize?client_id=${Config.clientId}&response_type=code
+	&redirect_uri=${Config.redirectUri}&duration=${Config.tokenDuration}&scope=${Config.tokenScope}
 	&state=1`;
 }
 
 export default function AuthorizationButton({ title }) {
-	if (!buttonConfig.clientId || !buttonConfig.redirectUri) {
+	if (!Config.clientId || !Config.redirectUri) {
 		return (
 			<div className={styles.error}>
 				Missing environment variables (check NEXT_PUBLIC_REDDIT_CLIENT_ID and NEXT_PUBLIC_REDIRECT_URI)

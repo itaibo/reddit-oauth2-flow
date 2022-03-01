@@ -16,7 +16,9 @@
 	font-family: 'Courier New', Courier, monospace;
 	border-radius: 6px;
 	border: 1px solid #d3d3d3;
-	padding: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 14px;
 }
 
 .error {
