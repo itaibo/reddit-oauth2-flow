@@ -1,5 +1,5 @@
 ## Reddit OAuth2 Flow
-Next.js application to get Reddit tokens using their [OAuth2 flow](https://github.com/reddit-archive/reddit/wiki/OAuth2)
+Next.js application to get Reddit tokens using their [OAuth2 specification](https://github.com/reddit-archive/reddit/wiki/OAuth2)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fitaibo%2Freddit-oauth2-flow)
 
